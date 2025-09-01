@@ -1,0 +1,30 @@
+.header-app {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  height: var(--tamano-xl);
+  gap: var(--tamano-s);
+  justify-content: center;
+  padding: var(--espacio-xxs);
+  border-bottom: 1px solid var(--gris);
+  box-shadow: var(--sombra-s);
+
+  .logo {
+    height: var(--tamano-l);
+    width: auto;
+  }
+
+  .nombre-empresa {
+    color: var(--cafe-oscuro);
+  }
+
+  #page-title {
+    display: flex;
+    align-items: flex-end;
+    color: var(--amarillo-polleria)
+  }
+
+
+}

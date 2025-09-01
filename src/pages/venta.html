@@ -1,0 +1,214 @@
+<div class="venta-container">
+  <div class="catalogo-container">
+    <div class="catalogo-isla">
+      <!-- contenedor botones isla -->
+      <button class="btn-isla" id="btn-abrir-envio-modal">
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>
+        <span>Envio</span>
+      </button>
+      <button class="btn-isla" id="btn-agregar-cargo-rapido">
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="16"></line>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+        <span>Cargo</span>
+      </button>
+      <button class="btn-isla" id="btn-aplicar-descuento-rapido">
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+        <span>Descuento</span>
+      </button>
+      <button class="btn-isla" id="btn-seleccionar-cliente-rapido">
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <line x1="20" y1="8" x2="20" y2="14"></line>
+          <line x1="23" y1="11" x2="17" y2="11"></line>
+        </svg>
+        <span>Cliente</span>
+      </button>
+      <button class="btn-isla" id="btn-agregar-pa-rapido">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-plus-square"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <line x1="12" y1="8" x2="12" y2="16" />
+          <line x1="8" y1="12" x2="16" y2="12" />
+        </svg>
+        <span>PA</span>
+      </button>
+    </div>
+
+    <div class="catalogo-grid">
+      <button class="btn-grid" data-product-id="PECH">
+        <img src="src/images/catalogo/PECH.png" alt="Pechuga" />
+        <span>PECH</span>
+      </button>
+      <button class="btn-grid" data-product-id="AL">
+        <img src="src/images/catalogo/AL.png" alt="Ala" />
+        <span>AL</span>
+      </button>
+      <button class="btn-grid" data-product-id="RTZ">
+        <img src="src/images/catalogo/RTZ.png" alt="Retazo" />
+        <span>RTZ</span>
+      </button>
+      <button class="btn-grid" data-product-id="PM">
+        <img src="src/images/catalogo/PM.png" alt="Pierna con Muslo" />
+        <span>PM</span>
+      </button>
+      <button class="btn-grid" data-product-id="PT">
+        <img src="src/images/catalogo/PT.png" alt="Patas" />
+        <span>PT</span>
+      </button>
+      <button class="btn-grid" data-product-id="MHG">
+        <img
+          src="src/images/catalogo/MHG.png"
+          alt="Molleja con Hígado"
+        />
+        <span>MHG</span>
+      </button>
+      <button class="btn-grid" data-product-id="PE">
+        <img src="src/images/catalogo/PE.png" alt="Pollo Entero" />
+        <span>PE</span>
+      </button>
+      <button class="btn-grid" data-product-id="SRT">
+        <img src="src/images/catalogo/SRT.png" alt="Surtida" />
+        <span>SRT</span>
+      </button>
+      <button class="btn-grid" data-product-id="DSP">
+        <img src="src/images/catalogo/DSP.png" alt="Desperdicio" />
+        <span>DSP</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="carrito-container">
+
+    <div class="carrito-tabla">
+      <div class="cabecera">
+        <span>Producto</span>
+        <span>Subtotal</span>
+      </div>
+
+      <div class="lista-items">
+
+        <div class="fila">
+          <div class="img-producto"><img src="src/images/catalogo/PECH.png" alt="Pechuga" /></div>
+          <div class="producto">
+            <span class="nombre-corte">Pechuga (Entera)</span>
+            <span class="peso-precio">0.708(kg) * $120.00</span>
+          </div>
+          <div class="costo">$84.96</div>
+        </div>
+
+        <div class="fila">
+          <div class="producto">
+            <span class="nombre-corte">Pechuga (Entera)</span>
+            <span class="peso-precio">0.708(kg) * $120.00</span>
+          </div>
+          <div class="costo">$84.96</div>
+        </div>
+
+        <div class="fila">
+          <div class="producto">
+            <span class="nombre-corte">Pechuga (Entera)</span>
+            <span class="peso-precio">0.708(kg) * $120.00</span>
+          </div>
+          <div class="costo">$84.96</div>
+        </div>
+
+        <div class="fila">
+          <div class="producto">
+            <span class="nombre-corte">Pechuga (Entera)</span>
+            <span class="peso-precio">0.708(kg) * $120.00</span>
+          </div>
+          <div class="costo">$84.96</div>
+        </div>
+      </div>
+    </div>
+    <div class="carrito-isla">
+      <button class="btn-isla">
+        <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>(<span id="item-count">0</span> items)</span>
+      </button>
+      <button class="btn-isla">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 14 14">
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.351 5.307a1.166 1.166 0 0 0-1.1-.778h-.903a1.041 1.041 0 0 0-.223 2.059l1.375.3a1.167 1.167 0 0 1-.25 2.307h-.777c-.508 0-.94-.324-1.1-.777m1.489-3.889V3.362m0 7V9.196m-4.864 4.302v-2.5h2.5" />
+            <path d="M13.388 5.804a6.5 6.5 0 0 1-11.39 5.35M.612 8.196a6.5 6.5 0 0 1 11.39-5.35" />
+            <path d="M12.002.502v2.5h-2.5" />
+          </g>
+        </svg>
+        <span id="carrito-total-value">0.00</span>
+      </button>
+      <button class="btn-isla">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span>Guardar</span>
+      </button>
+    </div>
+      
+  </div>
+</div>

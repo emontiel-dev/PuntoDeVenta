@@ -1,0 +1,284 @@
+/* Fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+
+
+/* ============================ */
+/* _variables.css
+/* ============================ */
+:root {
+  /* Colores Primarios y Neutros */
+  --blanco: #ffffff;
+  --negro: #1c1c1e;
+  --gris: #f2f2f7;
+  --cafe: #6f4c3e;
+  --amarillo: #fff307;
+  --anaranjado: #fbab00;
+  --rojo: #fb1100;
+  --verde: #4caf50;
+  --morado: #810198;
+
+  /* colores claros */
+  --gris-claro: #e5e5ea;
+  --cafe-claro: #7f5c4a;
+  --amarillo-claro: #fef9c3;
+  --anaranjado-claro: #fcd34d;
+  --rojo-claro: #f87171;
+  --verde-claro: #81c784;
+  --morado-claro: #a155b5;
+
+  /* fondos */
+  --gris-fondo: #f9f9f9;
+  --amarillo-fondo: #fffdf5;
+  --anaranjado-fondo: #fffaf2;
+
+  /* colores acentuados */
+  --cafe-oscuro: #5b3e32;
+  --amarillo-oscuro: #e3d100;
+  --anaranjado-oscuro: #f59b0b;
+  --rojo-oscuro: #d22e00;
+  --verde-oscuro: #1c9022;
+  --morado-oscuro: #670f93;
+
+  /* Heredados */
+  --gris-fondo-claro: #f9f9f9;
+  --gris-elemento-claro: #ffffff;
+  --gris-borde-sutil: #e5e5ea;
+  --gris-borde-input: #d1d1d6;
+  --gris-hover-sutil: #f2f2f7;
+  --gris-texto-primario: #6c6c6f;
+  --gris-texto-secundario: #8a8a8e;
+  --gris-texto-terciario: #aeaeb2;
+  --gris-fondo-deshabilitado: #efeff4;
+  --amarillo-polleria: #ffc107;
+  --amarillo-polleria-hover: #e0a800;
+  --amarillo-polleria-focus-ring: rgba(255, 193, 7, 0.3);
+  --texto-sobre-amarillo: var(--negro-azabache);
+  --verde-exito: #34a853;
+  --verde-exito-fondo: #e6f5ea;
+  --verde-accion: #4caf50;
+  --texto-sobre-verde: var(--blanco);
+  --azul-info: #0072ecd2;
+  --azul-info-fondo: #e5f2ff;
+  --rojo-peligro-texto: #d93025;
+  --rojo-peligro-fondo: #fce8e6;
+
+  /* Fuentes y Tipografía */
+  --fuente-principal: 'National Park', sans-serif;
+  --fuente-secundaria: 'Sofia Sans Condensed', sans-serif;
+
+  /* Sombras */
+
+  /* Color de la sombra: negro */
+  --color-sombra: rgba(0, 0, 0, 0.1);
+
+  --sombra-xs: 0px 0px 2px var(--color-sombra);
+  --sombra-s: 0px 0x 4px var(--color-sombra);
+  --sombra-m: 0px 0x 8px var(--color-sombra);
+  --sombra-l: 0px 0x 12px var(--color-sombra);
+  --sombra-g: 0px 0px 20px var(--color-sombra);
+
+  /* Transiciones */
+  --transicion-suave: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion-rapida: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Radios de borde */
+  --radio-borde-s: 0.375rem; /* Equivalente a 6px */
+  --radio-borde-m: 0.625rem; /* Equivalente a 10px */
+  --radio-borde-l: 1rem; /* Equivalente a 16px */
+  --radio-borde-pill: 50rem; /* Para formas de píldora */
+  --radio-borde-circulo: 50%; /* No se recomienda en rems, el porcentaje es más fiable */
+
+  /* Escala de espaciado */
+  --espacio-xxs: 0.25rem; /* 4px */
+  --espacio-xs: 0.5rem; /* 8px */
+  --espacio-s: 0.75rem; /* 12px */
+  --espacio-m: 1rem; /* 16px */
+  --espacio-l: 1.5rem; /* 24px */
+  --espacio-xl: 2rem; /* 32px */
+  --espacio-xxl: 3rem; /* 48px */
+
+  /* Escala de tamaño */
+  --tamano-xxs: 0.25rem; /* 4px */
+  --tamano-xs: 0.5rem; /* 8px */
+  --tamano-s: 0.75rem; /* 12px */
+  --tamano-m: 1rem; /* 16px */
+  --tamano-l: 1.5rem; /* 24px */
+  --tamano-xl: 2rem; /* 32px */
+  --tamano-xxl: 3rem; /* 48px */
+  --tamano-xxll: 3.5rem; /* 56px */
+  --tamano-xxxl: 4rem; /* 64px */
+  --tamano-xxxll: 4.5rem; /* 72px */
+  --tamano-main: calc(-1.5rem + 100dvh - 4rem);
+}
+/* Reseteo Básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos Globales para HTML y Body */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--amarillo-fondo-polleria);
+  color: var(--negro);
+  /* Suavizado de fuente */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin-top: var(--tamano-xl);
+  margin-bottom: 5rem;
+}
+
+/*  Barra de desplazamiento  */
+body::-webkit-scrollbar {
+  width: var(--tamano-xxs);
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--cafe-claro-polleria);
+  border-radius: var(--radio-borde-pill);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cafe-oscuro-polleria);
+}
+
+/* Imágenes y videos responsivos */
+/* img, video { max-width: 100%;  height: auto;  display: block; } */
+
+/* Soporte para Movimiento Reducido */
+/* Deshabilita animaciones y transiciones para usuarios con preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  ::after,
+  ::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* Estilos de encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-principal);
+  color: var(--cafe-oscuro);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--tamano-l);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--tamano-m);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--tamano-s);
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: var(--tamano-xs);
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: var(--tamano-xxs);
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: var(--tamano-xxs);
+  line-height: 1.6;
+}
+
+/* Estilos de párrafos */
+p {
+  font-family: var(--fuente-secundaria);
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Estilos de enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transicion-rapida);
+}
+
+a:hover,
+a:focus-visible {
+  outline: none;
+}
+
+/* Listas */
+ul,
+ol {
+  font-family: var(--fuente-secundaria);
+  padding: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  font-family: var(--fuente-secundaria);
+}
+
+/* Texto en negrita y cursiva */
+strong,
+b {
+  font-family: var(--fuente-secundaria);
+  font-weight: 700;
+}
+
+em,
+i {
+  font-family: var(--fuente-secundaria);
+  font-style: italic;
+}
+
+/* Pequeño texto o notas */
+small {
+  font-family: var(--fuente-secundaria);
+  font-size: var(--tamano-s);
+  font-weight: 400;
+  color: var(--cafe-polleria);
+}
+
+.main {
+  width: 100%;
+  height: calc(100dvh - var(--tamano-xl) - 5rem);
+  padding: var(--espacio-s);
+}
+
+.hidden {
+  display: none;
+}

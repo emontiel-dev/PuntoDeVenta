@@ -1,0 +1,218 @@
+.venta-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--espacio-s);
+  /*height: var(--tamano-main);*/
+}
+
+/* ===== Estilos contenedor de catálogo ===== */
+.catalogo-container {
+  padding: var(--espacio-s);
+  border: 1px solid var(--gris-borde-sutil);
+  border-radius: var(--radio-borde-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  justify-content: space-around;
+}
+
+/* ===== Estilos btns isla de productos ===== */
+
+/* == Contenedor isla == */
+.catalogo-container .catalogo-isla {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: var(--espacio-xxs);
+
+}
+
+/* == btns isla == */
+.catalogo-container .catalogo-isla .btn-isla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  padding: var(--espacio-xxs);
+  width: auto;
+  gap: var(--espacio-xxs);
+  flex-grow: 1; /* Hace que el elemento crezca */
+  flex-shrink: 1; /* Permite que el elemento se encoja si es necesario */
+  flex-basis: 0; /* Punto de partida para el tamaño antes de crecer/encogerse */
+  background-color: var(--amarillo-fondo);
+  border: 1px solid var(--gris-borde-sutil);
+  border-radius: var(--radio-borde-m);
+}
+
+.catalogo-container .catalogo-isla .btn-isla svg {
+  width: var(--tamano-xl);
+  height: var(--tamano-xl);
+
+  color: var(--anaranjado-oscuro);
+}
+
+.catalogo-container .catalogo-isla .btn-isla span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: var(--tamano-xl);
+  max-width: var(--tamano-xxl);
+  color: var(--cafe-oscuro);
+}
+
+/* ===== Estilos btns catalogo productos ===== */
+.catalogo-container .catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr));
+  gap: var(--espacio-xs);
+}
+
+.catalogo-container .catalogo-grid .btn-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-xxs) var(--espacio-xs);
+  width: 4rem;
+  height: 3.5rem;
+  background-color: var(--amarillo-fondo);
+  border: 0.8px solid var(--gris-borde-sutil);
+  border-radius: var(--radio-borde-m);
+}
+
+.catalogo-container .catalogo-grid .btn-grid img {
+  width: auto;
+  height: 2rem;
+
+}
+
+.catalogo-container .catalogo-grid .btn-grid span {
+  color: var(--cafe-oscuro);
+  font-weight: 600;
+  
+}
+
+/* ===== Estilos contenedor del carrito ===== */
+.carrito-container {
+  padding: var(--espacio-s);
+  border: 1px solid var(--gris-borde-sutil);
+  border-radius: var(--radio-borde-l);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--espacio-s);
+  min-height: 0;
+}
+
+
+/* ===== Estilos tabla del carrito ===== */
+.carrito-container .carrito-tabla {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Permite que la tabla ocupe el espacio disponible */
+  min-height: 0;
+}
+
+/* ===== Estilos cabecera tabla carrito (Producto - Subtotal) ===== */
+.carrito-tabla .cabecera {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gris-borde-sutil);
+  border-radius: var(--radio-borde-m) var(--radio-borde-m) 0 0;
+
+  color: var(--cafe-oscuro);
+  font-weight: 600;
+  font-size: var(--tamano-m);
+  flex-shrink: 0; /* Asegura que el encabezado no se encoja al hacer scroll */
+}
+
+/* === Contenedor para el scroll de la lista de productos === */
+.carrito-container .lista-items {
+  overflow-y: auto; /* Permite el scroll vertical si es necesario */
+  padding-right: var(--espacio-xs); /* Espacio para la barra de scroll */
+  padding-top: var(--espacio-xxs);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  justify-content: space-around;
+}
+
+/* ===== Estilos filas de la tabla del carrito ===== */
+.carrito-container .lista-items .fila {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*gap: var(--espacio-s);*/ /* Se eliminó el gap */
+}
+
+.carrito-container .lista-items .fila .img-producto {
+  width: var(--tamano-xxl);
+  height: auto;
+  padding: var(--espacio-xxs);
+}
+
+.carrito-container .lista-items .fila .img-producto img {
+  width: 100%;
+  height: 100%;
+}
+
+.carrito-container .lista-items .fila .producto {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.carrito-container .lista-items .fila .producto .nombre-corte{
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.carrito-container .lista-items .fila .producto .peso-precio{
+  padding-left: var(--espacio-xxs);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--cafe-oscuro);
+}
+
+.carrito-container .lista-items .fila .costo {
+  flex-grow: 1;
+  text-align: right;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* ===== Estilos de los botones del carrito (isla) ===== */
+.carrito-isla {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-xs); 
+}
+
+.carrito-isla .btn-isla {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacio-xs);
+  width: 100%;
+  gap: var(--espacio-xs);
+  background-color: var(--amarillo-fondo);
+  border: 1px solid var(--gris-borde-sutil);
+  border-radius: var(--radio-borde-m);
+}
+
+.carrito-isla .btn-isla svg {
+  min-width: var(--tamano-l);
+  height: var(--tamano-l);
+  color: var(--anaranjado-oscuro);
+  flex-grow: 1;
+}
+
+.carrito-isla .btn-isla span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: var(--cafe-oscuro);
+  flex-grow: 2;
+}
