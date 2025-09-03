@@ -284,6 +284,15 @@ small {
   color: var(--cafe-polleria);
 }
 
+/* input */
+input[type="search"] {
+  border: none; /* Elimina el borde del input */
+}
+/* Elimina el outline cuando el input está enfocado */
+input[type="search"]:focus {
+  outline: none;
+}
+
 .main {
   width: 100%;
   height: calc(100dvh - var(--tamano-xl) - 5rem);

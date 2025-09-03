@@ -1,6 +1,6 @@
 <section class="inventario-container">
-  <header class="header">
-    <h2 class="Subtitulo">Categorias</h2>
+  <header class="header"> <!--isla de categorias -->
+    <h2 class="subtitulo">Categorias</h2>
     <nav class="categorias">
       <a href="#" class="btn">
         <img src="/src/icons/categorias/complementos.png" alt="Complementos" class="icon" />
@@ -25,11 +25,45 @@
     </nav>
   </header>
 
-  <form class="barra-busqueda" action="/buscar" method="get">
-      <input type="search" id="input" name="q" class="barra" placeholder="Pechuga...">
+  <form class="busqueda" action="/buscar" method="get"> <!-- Buscador -->
+      <input type="search" id="input" name="q" class="input" placeholder="¿Qué producto deseas buscar?" />
       <button type="submit" class="btn">
         <span class="material-symbols-rounded">search</span>
         <span class="label">Buscar</span>
       </button>
   </form>
+
+  <section class="resultados"> <!-- Resultados de búsqueda -->
+    <!-- Este div se usará para dar feedback visual al usuario, tendra tres fases: -->
+    <!-- Inicial: <p class="feedback">Productos <strong class="producto hidden"></strong></p>  -->
+    <!-- Resultados: <p class="feedback">Resultados para <strong class="producto">{valor de busqueda}</strong></p>  -->
+    <!-- Sin resultados: <p class="feedback">Sin resultados para <strong class="producto">{valor de búsqueda}</strong></p>  -->
+    <div class="feedback-ux">
+      
+      <p class="feedback">Productos<strong class="producto hidden"></strong></p>
+      
+      <!--
+      <p class="feedback">Resultados para<strong class="producto">Pechuga</strong></p>
+      -->
+      <!--
+      <p class="feedback">Sin resultados para <strong class="producto">Pollo Entero</strong></p>
+      -->
+    
+    </div>
+
+    <!-- Este div se usará para mostrar los productos encontrados -->
+    <!--<div class="productos">--> <!-- considerar usar ul's para el acomodo de informacion en filas tipo deck-->
+      <ul class="productos">
+        <li class="img-container">
+          <img src="/src/images/catalogo/PECH.png" alt="Pechuga" class="icon" />
+          <span class="simbologia">PECH</span>
+        </li>
+        <li class="nombre">
+          <span class="label">Nombre</span>
+          <span class="nombre">Pechuga</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
 </section>

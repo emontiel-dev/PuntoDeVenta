@@ -49,34 +49,104 @@
     }
   }
 
-  .barra-busqueda {
+  .busqueda {
     display: flex;
-    align-items: center;
-    gap: var(--espacio-xs);
     padding: var(--espacio-xs);
     border: 1px solid var(--amarillo);
     border-radius: var(--radio-borde-l);
+    transition: border-color var(--transicion-suave);
 
-    .barra {
-      flex: 1;
-      padding: var(--espacio-xs);
-      border: 1px solid var(--amarillo);
-      border-radius: var(--radio-borde-l);
+    &:focus-within {
+      border: 1px solid var(--anaranjado);
+      box-shadow: var(--sombra-s);
+
+      .btn {
+        .material-symbols-rounded {
+          font-weight: normal;
+          color: var(--anaranjado);
+        }
+      }
+    }
+
+    .input {
+      flex-grow: 1;
+      padding: var(--espacio-xxs);
+      border: none;
+      font-size: var(--tamano-m);
+
+      &:focus {
+        // Estilos para el focus y el placeholder
+        outline: none;
+      }
+      &::placeholder {
+        color: var(--gris-texto-secundario); // O el color que desees
+      }
     }
 
     .btn {
-      display: flex;
-      align-items: center;
-      padding: var(--espacio-xs);
-      border: 1px solid var(--amarillo);
-      border-radius: var(--radio-borde-l);
-
-      .material-symbols-rounded {
-        font-size: var(--tamano-s);
-      }
+      background: transparent;
+      border: none;
 
       .label {
         display: none;
+      }
+
+      .material-symbols-rounded {
+        font-size: var(--tamano-l);
+        font-weight: lighter;
+        color: var(--amarillo);
+      }
+    }
+  }
+
+  .resultados {
+    display: flex;
+    padding: var(--espacio-xs);
+
+    flex-direction: column;
+    gap: var(--espacio-s);
+
+    border: 1px solid var(--amarillo);
+    border-radius: var(--radio-borde-l);
+
+    .feedback-ux {
+      display: flex;
+      gap: var(--espacio-xs);
+      padding: 0 var(--espacio-xs);
+
+      .feedback,
+      .producto {
+        font-family: var(--fuente-principal);
+        color: var(--cafe-oscuro);
+        font-weight: 600;
+        font-size: var(--tamano-m);
+        line-height: 1.2;
+      }
+    }
+
+    .productos {
+      display: flex;
+      gap: var(--espacio-xs);
+
+      .img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: var(--tamano-xl);
+        
+        
+
+
+        .icon {
+          width: 100%;
+          height: auto;
+        }
+        .simbologia {
+            font-size: var(--tamano-s);
+            color: var(--cafe-oscuro);
+            font-weight: 600;
+        }
       }
     }
   }
