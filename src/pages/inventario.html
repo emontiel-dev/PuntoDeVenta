@@ -1,3 +1,35 @@
 <section class="inventario-container">
-  <h2>Inventario</h2>
+  <header class="header">
+    <h2 class="Subtitulo">Categorias</h2>
+    <nav class="categorias">
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/complementos.png" alt="Complementos" class="icon" />
+        <span class="label">Complementos</span>
+      </a>
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/pollo.png" alt="Pollo" class="icon" />
+        <span class="label">Pollo</span>
+      </a>
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/adicionales.png" alt="Adicionales" class="icon" />
+        <span class="label">Adicionales</span>
+      </a>
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/pollo.png" alt="Bebidas" class="icon" />
+        <span class="label">Bebidas</span>
+      </a>
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/pollo.png" alt="Postres" class="icon" />
+        <span class="label">Postres</span>
+      </a>
+    </nav>
+  </header>
+
+  <form class="barra-busqueda" action="/buscar" method="get">
+      <input type="search" id="input" name="q" class="barra" placeholder="Pechuga...">
+      <button type="submit" class="btn">
+        <span class="material-symbols-rounded">search</span>
+        <span class="label">Buscar</span>
+      </button>
+  </form>
 </section>

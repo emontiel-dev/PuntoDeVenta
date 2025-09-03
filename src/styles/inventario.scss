@@ -1,9 +1,83 @@
 /* estilos inventario */
 .inventario-container {
   display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
 
-  
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-xs);
+    padding: var(--espacio-xs);
+    border: 1px solid var(--amarillo);
+    border-radius: var(--radio-borde-l);
+
+    .categorias {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: var(--espacio-xs);
+      width: 100%;
+
+      .btn {
+        display: flex;
+        flex-direction: column;
+        gap: var(--espacio-xxs);
+        align-items: center;
+        width: 5rem;
+        padding: var(--espacio-xs);
+        flex-shrink: 0;
+        border: 0.5px solid var(--amarillo);
+        border-radius: var(--radio-borde-l);
+
+        .icon {
+          width: 3rem;
+          height: auto;
+        }
+        .label {
+          text-align: center;
+          font-weight: 600;
+          font-size: var(--tamano-s);
+          width: 100%;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  .barra-busqueda {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-xs);
+    padding: var(--espacio-xs);
+    border: 1px solid var(--amarillo);
+    border-radius: var(--radio-borde-l);
+
+    .barra {
+      flex: 1;
+      padding: var(--espacio-xs);
+      border: 1px solid var(--amarillo);
+      border-radius: var(--radio-borde-l);
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      padding: var(--espacio-xs);
+      border: 1px solid var(--amarillo);
+      border-radius: var(--radio-borde-l);
+
+      .material-symbols-rounded {
+        font-size: var(--tamano-s);
+      }
+
+      .label {
+        display: none;
+      }
+    }
+  }
 }
-
-
-  

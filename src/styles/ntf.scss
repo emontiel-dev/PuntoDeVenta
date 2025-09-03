@@ -1,0 +1,67 @@
+/* ========================================================================== */
+/* MODULE: Not Found (404) Page                                               */
+/* ========================================================================== */
+
+/**
+ * Contenedor principal para la página 404.
+ * Utiliza Flexbox para centrar vertical y horizontalmente todo el contenido.
+ * Define el espaciado interno y el espacio entre elementos hijos.
+ */
+.ntf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-s);
+  padding: var(--espacio-xxxll) var(--espacio-m);
+
+  /**
+   * Estilos para los elementos de texto de la página.
+   * .title: El título principal (ej. "404").
+   * .frase: Una frase o subtítulo llamativo.
+   * .message: Un mensaje descriptivo para el usuario.
+   * Todos los textos están centrados.
+   */
+  .title {
+    font-size: var(--tamano-xxxll);
+    text-align: center;
+  }
+  .frase {
+    font-size: var(--tamano-xl);
+    text-align: center;
+  }
+  .message {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  /**
+   * Estilo para el enlace de "regreso", diseñado para parecer un botón.
+   * Utiliza Flexbox para alinear el ícono y el texto.
+   * Tiene bordes redondeados y una sombra para darle prominencia.
+   */
+  a {
+    display: flex;
+    margin: var(--espacio-m);
+    padding: var(--espacio-s);
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacio-xs);
+    border-radius: var(--radio-borde-pill);
+    box-shadow: var(--sombra-m);
+
+    /* Estilo para el ícono dentro del enlace/botón. */
+    .material-symbols-rounded {
+      font-size: var(--tamano-xxl);
+      color: var(--cafe-oscuro);
+    }
+    
+    /* Estilo para la etiqueta de texto dentro del enlace/botón. */
+    .label {
+      display: inline-block;
+      width: 7.5rem;
+      font-size: var(--tamano-m);
+      color: var(--cafe-oscuro);
+    }
+  }
+}
