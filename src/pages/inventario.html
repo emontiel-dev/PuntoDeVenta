@@ -1,29 +1,33 @@
 <section class="inventario-container">
-  <header class="header"> <!--isla de categorias -->
-    <h2 class="subtitulo">Categorias</h2>
+  <header class="categorias-container"> <!--isla de categorias -->
+    <h2 class="titulo">Categorias</h2>
     <nav class="categorias">
+      <!-- Los <a> se crearan dinamicamente con js por lo que este html sera eliminado-->
+        <!-- inicia tramo html a eliminar-->
       <a href="#" class="btn">
-        <img src="/src/icons/categorias/complementos.png" alt="Complementos" class="icon" />
+        <img src="/src/icons/categorias/logo.png" alt="Pollo" class="icon-img" />
+        <span class="label">Pollo Fresco</span>
+      </a>      
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/pollo-vivo.png" alt="Pollo-Vivo" class="icon-img" />
+        <span class="label">Pollo Vivo</span>
+      </a>
+      <a href="#" class="btn">
+        <img src="/src/icons/categorias/complementos.png" alt="Pollo-Vivo" class="icon-img" />
         <span class="label">Complementos</span>
       </a>
       <a href="#" class="btn">
-        <img src="/src/icons/categorias/pollo.png" alt="Pollo" class="icon" />
-        <span class="label">Pollo</span>
-      </a>
-      <a href="#" class="btn">
-        <img src="/src/icons/categorias/adicionales.png" alt="Adicionales" class="icon" />
+        <img src="/src/icons/categorias/adicionales.png" alt="Pollo-Vivo" class="icon-img" />
         <span class="label">Adicionales</span>
       </a>
       <a href="#" class="btn">
-        <img src="/src/icons/categorias/pollo.png" alt="Bebidas" class="icon" />
-        <span class="label">Bebidas</span>
+        <span class="material-symbols-outlined icon">library_add</span>
+        <span class="label hidden">Añadir</span> <!-- eliminamos la label del btn añadir o la ocultamos con la se hidden-->
       </a>
-      <a href="#" class="btn">
-        <img src="/src/icons/categorias/pollo.png" alt="Postres" class="icon" />
-        <span class="label">Postres</span>
-      </a>
+      <!-- finaliza tramo html a eliminar-->
     </nav>
   </header>
+
 
   <form class="busqueda" action="/buscar" method="get"> <!-- Buscador -->
       <input type="search" id="input" name="q" class="input" placeholder="¿Qué producto deseas buscar?" />
@@ -33,7 +37,7 @@
       </button>
   </form>
 
-  <section class="resultados"> <!-- Resultados de búsqueda -->
+  <section class="resultados-container"> <!-- Resultados de búsqueda -->
     <!-- Este div se usará para dar feedback visual al usuario, tendra tres fases: -->
     <!-- Inicial: <p class="feedback">Productos <strong class="producto hidden"></strong></p>  -->
     <!-- Resultados: <p class="feedback">Resultados para <strong class="producto">{valor de busqueda}</strong></p>  -->
@@ -51,19 +55,218 @@
     
     </div>
 
-    <!-- Este div se usará para mostrar los productos encontrados -->
-    <!--<div class="productos">--> <!-- considerar usar ul's para el acomodo de informacion en filas tipo deck-->
-      <ul class="productos">
-        <li class="img-container">
+    <div class="resultados">
+    <!-- Los div's a continuacion  representan una fila de producto y se generará dinámicamente para cada resultado. -->
+      <div class="producto-fila">
+        <!-- Subcontenedor para la imagen del producto y su codigo -->
+        <div class="img-container">
           <img src="/src/images/catalogo/PECH.png" alt="Pechuga" class="icon" />
           <span class="simbologia">PECH</span>
-        </li>
-        <li class="nombre">
-          <span class="label">Nombre</span>
-          <span class="nombre">Pechuga</span>
-        </li>
-      </ul>
+        </div>
+        <!-- Subcontenedor para la información del producto -->
+        <div class="info-container">
+          <!-- Usamos ul para agrupar 'Nombre', 'Estado de Stock', 'Categoria'-->
+          <ul class="info">
+            <li class="nombre">Pechuga Entera </li>
+            <li class="tags">
+              <ul>
+                <li class="stock">Stock</li> <!-- Stock/Sin Stock.-->
+                <li class="categoria">POLLO</li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="precio">
+            <li class="publico">
+              <img src="/src/icons/precio/publico.png" alt="publico" class="icon" />
+              <span class="valor">$120.00</span> <!-- Aplicamos estilo y formato final, sin embargo el valor debera pasar solo como numero y darle formato con js-->
+            </li>
+            <li class="cocina">
+              <img src="/src/icons/precio/cocina.png" alt="cocina" class="icon" />
+              <span class="valor">$117.00</span>
+            </li>
+            <li class="leal">
+              <img src="/src/icons/precio/leal.png" alt="leal" class="icon" />
+              <span class="valor">$105.00</span>
+            </li>
+            <li class="aliado">
+              <img src="/src/icons/precio/aliado.png" alt="aliado" class="icon" />
+              <span class="valor">$105.00</span>
+            </li>
+            <li class="mayoreo">
+              <img src="/src/icons/precio/mayoreo.png" alt="mayoreo" class="icon" />
+              <span class="valor">$100.00</span>
+            </li>
+            <li class="aliado">
+              <span class="material-symbols-outlined">percent_discount</span>
+              <span class="valor">$85.00</span>
+            </li>
+            <li class="mayoreo">
+              <span class="material-symbols-outlined">percent_discount</span>
+              <span class="valor">$80.00</span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="producto-fila">
+        <!-- Subcontenedor para la imagen del producto y su codigo -->
+        <div class="img-container">
+          <img src="/src/images/catalogo/PE.png" alt="Pechuga" class="icon" />
+          <span class="simbologia">PE</span>
+        </div>
+        <!-- Subcontenedor para la información del producto -->
+        <div class="info-container">
+          <!-- Usamos ul para agrupar 'Nombre', 'Estado de Stock', 'Categoria'-->
+          <ul class="info">
+            <li class="nombre">Pollo Entero </li>
+            <li class="tags">
+              <ul>
+                <li class="stock hidden">Stock</li> <!-- Stock/Sin Stock. hidden por el momento--> 
+                <li class="categoria">POLLO</li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="precio">
+            <li class="publico">
+              <img src="/src/icons/precio/publico.png" alt="publico" class="icon" />
+              <span class="valor">$90.00</span> <!-- Aplicamos estilo y formato final, sin embargo el valor debera pasar solo como numero y darle formato con js-->
+            </li>
+            
+            <li class="promocion">
+              <span class="material-symbols-outlined">percent_discount</span>
+              <span class="valor">$82.00</span>
+            </li>
+            <!--
+            <li class="cocina">
+              <img src="/src/icons/precio/cocina.png" alt="cocina" class="icon" />
+              <span class="valor">$90.00</span>
+            </li>
+            <li class="leal">
+              <img src="/src/icons/precio/leal.png" alt="leal" class="icon" />
+              <span class="valor">$85.00</span>
+            </li>
+            -->
+            <li class="aliado">
+              <img src="/src/icons/precio/aliado.png" alt="aliado" class="icon" />
+              <span class="valor">$80.00</span>
+            </li>
+
+            <li class="mayoreo">
+              <img src="/src/icons/precio/mayoreo.png" alt="mayoreo" class="icon" />
+              <span class="valor">$78.00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="producto-fila">
+        <!-- Subcontenedor para la imagen del producto y su codigo -->
+        <div class="img-container">
+          <img src="/src/images/catalogo/PM.png" alt="Pechuga" class="icon" />
+          <span class="simbologia">PM</span>
+        </div>
+        <!-- Subcontenedor para la información del producto -->
+        <div class="info-container">
+          <!-- Usamos ul para agrupar 'Nombre', 'Estado de Stock', 'Categoria'-->
+          <ul class="info">
+            <li class="nombre">Pulpa de Pierna con Muslo </li>
+            <li class="tags">
+              <ul>
+                <li class="stock hidden">Stock</li> <!-- Stock/Sin Stock. hidden por el momento--> 
+                <li class="categoria">POLLO</li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="precio">
+            <li class="publico">
+              <img src="/src/icons/precio/publico.png" alt="publico" class="icon" />
+              <span class="valor">$110.00</span> <!-- Aplicamos estilo y formato final, sin embargo el valor debera pasar solo como numero y darle formato con js-->
+            </li>
+            
+            <li class="promocion">
+              <span class="material-symbols-outlined">percent_discount</span>
+              <span class="valor">$100.00</span>
+            </li>
+            <!--
+            <li class="cocina">
+              <img src="/src/icons/precio/cocina.png" alt="cocina" class="icon" />
+              <span class="valor">$90.00</span>
+            </li>
+            <li class="leal">
+              <img src="/src/icons/precio/leal.png" alt="leal" class="icon" />
+              <span class="valor">$85.00</span>
+            </li>
+            
+            <li class="aliado">
+              <img src="/src/icons/precio/aliado.png" alt="aliado" class="icon" />
+              <span class="valor">$80.00</span>
+            </li>
+            -->
+            <li class="mayoreo">
+              <img src="/src/icons/precio/mayoreo.png" alt="mayoreo" class="icon" />
+              <span class="valor">$90.00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="producto-fila">
+        <!-- Subcontenedor para la imagen del producto y su codigo -->
+        <div class="img-container">
+          <span class="material-symbols-outlined icon">shopping_bag_speed</span>
+          <span class="simbologia">PKO</span>
+        </div>
+        <!-- Subcontenedor para la información del producto -->
+        <div class="info-container">
+          <!-- Usamos ul para agrupar 'Nombre', 'Estado de Stock', 'Categoria'-->
+          <ul class="info">
+            <li class="nombre">Empanizador condimentado estilo japones</li>
+            <li class="tags">
+              <ul>
+                <li class="stock">Stock</li> <!-- Stock/Sin Stock. hidden por el momento--> 
+                <li class="categoria" style="background-color: var(--verde);">COM..</li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="precio">
+            <li class="publico">
+              <img src="/src/icons/precio/publico.png" alt="publico" class="icon" />
+              <span class="valor">$140.00</span> <!-- Aplicamos estilo y formato final, sin embargo el valor debera pasar solo como numero y darle formato con js-->
+            </li>
+            <!--
+            <li class="promocion">
+              <span class="material-symbols-outlined">percent_discount</span>
+              <span class="valor">$100.00</span>
+            </li>
+            <!--
+            <li class="cocina">
+              <img src="/src/icons/precio/cocina.png" alt="cocina" class="icon" />
+              <span class="valor">$90.00</span>
+            </li>
+            <li class="leal">
+              <img src="/src/icons/precio/leal.png" alt="leal" class="icon" />
+              <span class="valor">$85.00</span>
+            </li>
+            
+            <li class="aliado">
+              <img src="/src/icons/precio/aliado.png" alt="aliado" class="icon" />
+              <span class="valor">$80.00</span>
+            </li>
+            
+            <li class="mayoreo">
+              <img src="/src/icons/precio/mayoreo.png" alt="mayoreo" class="icon" />
+              <span class="valor">$90.00</span>
+            </li>
+            -->
+          </ul>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
-
 </section>

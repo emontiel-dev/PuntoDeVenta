@@ -89,11 +89,7 @@
 
 
 /* ESTILO PARA ICONOS */
-.nav-app .nav-item.material-symbols-rounded {
-  font-size: var(--tamano-xxl);
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' -25,
-  'opsz' 30
+.nav-app .nav-item .material-symbols-rounded {
+  
+  color: var(--gris-texto-secundario);
 }

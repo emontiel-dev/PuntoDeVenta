@@ -1,10 +1,13 @@
 /* estilos inventario */
 .inventario-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: var(--espacio-s);
+  min-height: 0;
 
-  .header {
+  /* reglas para el header que la hace de contenedor para categorias */
+  .categorias-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,6 +16,7 @@
     border: 1px solid var(--amarillo);
     border-radius: var(--radio-borde-l);
 
+    /* reglas para nav que contienes las categorias '<a>' */
     .categorias {
       display: flex;
       flex-wrap: nowrap;
@@ -20,100 +24,104 @@
       gap: var(--espacio-xs);
       width: 100%;
 
+      /* reglas para los '<a>' que hacen de btn */
       .btn {
         display: flex;
         flex-direction: column;
         gap: var(--espacio-xxs);
         align-items: center;
-        width: 5rem;
+        justify-content: space-between;
+        width: var(--tamano-xxxl);
         padding: var(--espacio-xs);
-        flex-shrink: 0;
+        /*flex-shrink: 0; ya no es necesaria, ya definimos un ando para btn */
         border: 0.5px solid var(--amarillo);
         border-radius: var(--radio-borde-l);
 
+        /* .icon-img --> se definen reglas responsivas en base.scss */
+        /* reglas para el icono de categoria */
         .icon {
-          width: 3rem;
-          height: auto;
+          font-size: 2.5em;
         }
+        /* reglas para las labels de categoria. ahora son responsivas */
         .label {
           text-align: center;
           font-weight: 600;
           font-size: var(--tamano-s);
           width: 100%;
-
-          white-space: nowrap;
+          flex-grow: 1;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          white-space: normal;
+          word-break: break-word;
           overflow: hidden;
           text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
         }
       }
     }
   }
 
+  /* reglas para la barra de busqueda */
   .busqueda {
     display: flex;
     padding: var(--espacio-xs);
     border: 1px solid var(--amarillo);
     border-radius: var(--radio-borde-l);
     transition: border-color var(--transicion-suave);
-
+    /* reglas para el focus de la barra de busqueda*/
     &:focus-within {
       border: 1px solid var(--anaranjado);
       box-shadow: var(--sombra-s);
-
-      .btn {
-        .material-symbols-rounded {
-          font-weight: normal;
-          color: var(--anaranjado);
-        }
-      }
     }
-
+    /* reglas para el input */
     .input {
       flex-grow: 1;
       padding: var(--espacio-xxs);
       border: none;
       font-size: var(--tamano-m);
-
+      /* eliminamos su focus */
       &:focus {
         // Estilos para el focus y el placeholder
         outline: none;
       }
       &::placeholder {
-        color: var(--gris-texto-secundario); // O el color que desees
+        color: var(--gris-texto-secundario); // reglas para el placeholder
       }
     }
 
     .btn {
+      // reglas para el btn de la barra
       background: transparent;
       border: none;
 
       .label {
-        display: none;
+        display: none; // ocultamos etiqueta de btn
       }
 
       .material-symbols-rounded {
+        // reglas para icono
         font-size: var(--tamano-l);
-        font-weight: lighter;
         color: var(--amarillo);
       }
     }
   }
 
-  .resultados {
+  .resultados-container {
     display: flex;
+    flex: 1;
     padding: var(--espacio-xs);
-
     flex-direction: column;
-    gap: var(--espacio-s);
-
+    gap: var(--espacio-xs);
     border: 1px solid var(--amarillo);
     border-radius: var(--radio-borde-l);
+    overflow-y: auto;
+    min-height: 0;
 
     .feedback-ux {
+      background-color: inherit;
       display: flex;
-      gap: var(--espacio-xs);
-      padding: 0 var(--espacio-xs);
-
+      
+      
       .feedback,
       .producto {
         font-family: var(--fuente-principal);
@@ -124,28 +132,148 @@
       }
     }
 
-    .productos {
+    .resultados {
       display: flex;
+      flex: 1;
+      flex-direction: column;
       gap: var(--espacio-xs);
+      
+      overflow: auto;
+      min-height: 0;
+      &::-webkit-scrollbar { display: none;}
 
-      .img-container {
+
+
+      .producto-fila {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: var(--tamano-xl);
-        
-        
+        gap: var(--espacio-xs);
+        border: 1px solid var(--amarillo);
+        border-radius: var(--radio-borde-l);
+        padding: var(--espacio-xs);
 
+        .img-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: var(--espacio-xxs);
+          flex-direction: column;
+          width: 15%;
 
-        .icon {
-          width: 100%;
-          height: auto;
-        }
-        .simbologia {
+          .icon {
+            width: 100%;
+            height: auto;
+            font-family: Material Symbols Rounded;
+            font-size: var(--tamano-xl);
+            text-align: center;
+            color: var(--verde);
+          }
+          .simbologia {
             font-size: var(--tamano-s);
             color: var(--cafe-oscuro);
             font-weight: 600;
+          }
+        }
+
+        .info-container {
+          display: flex;
+          flex-direction: column;
+          gap: var(--espacio-xxs);
+          width: 85%;
+
+          .info {
+            display: flex;
+
+            list-style-type: none;
+            padding: 0 var(--espacio-xxs);
+            gap: var(--espacio-xxs);
+            justify-content: space-between;
+            color: var(--cafe-oscuro);
+            align-items: start;
+            width: 100%;
+
+            .nombre {
+              font-family: var(--fuente-principal);
+              font-weight: 600;
+              display: -webkit-box;
+              -webkit-line-clamp: 2; /* Limita el texto a dos líneas */
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+
+            .tags {
+              display: flex;
+              height: auto;
+              align-items: center;
+
+              ul {
+                display: flex;
+                list-style-type: none;
+                padding: 0; /* eliminamos el estiulo de lista */
+                gap: var(--espacio-xs);
+
+                .stock {
+                  padding: 0 0.4em;
+                  border-radius: var(--radio-borde-l);
+                  background-color: var(--verde);
+                  color: var(--blanco);
+                  letter-spacing: 0.1em;
+                }
+                .categoria {
+                  padding: 0 0.4em;
+                  border-radius: var(--radio-borde-l);
+                  background-color: var(--cafe-claro);
+                  color: var(--blanco);
+                  letter-spacing: 0.1em;
+                }
+              }
+            }
+          }
+
+          .precio {
+            /* ul: contenedor de los precios */
+            list-style-type: none;
+            padding: 0; /* eliminamos el estiulo de lista */
+            display: flex;
+            gap: var(--espacio-s);
+            width: 100%;
+            border-radius: var(--radio-borde-l);
+
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+
+            li {
+              /* contenedor de cada tipo de precio */
+              display: flex;
+              align-items: center;
+              gap: var(--espacio-xs);
+              padding: var(--espacio-xxs);
+              border: 1px solid var(--amarillo);
+              border-radius: var(--radio-borde-l);
+
+              img {
+                /* icono tipo de precio */
+                width: var(--espacio-l);
+              }
+
+              .valor {
+                /* valor */
+                font-family: var(--fuente-principal);
+                font-size: var(--sombra-s);
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                color: var(--cafe-oscuro);
+              }
+              span {
+                font-family: Material Symbols Rounded;
+                font-size: 1.2rem;
+                color: var(--rojo);
+              }
+            }
+          }
         }
       }
     }
